@@ -22,7 +22,7 @@ int Apple = 3;
 bool running;
 class Snake {
 public:
-	void run()
+	void run() //початок гри
 	{
 
 		initField();
@@ -41,7 +41,7 @@ public:
 		cin.ignore();
 	}
 
-	void changeDirection(char key) {
+	void changeDirection(char key) { //зміна напряму руху персонажа(змійки)
 
 		switch (key) {
 		case 'w':
@@ -62,7 +62,7 @@ public:
 		}
 	}
 
-	void move(int dx, int dy) {
+	void move(int dx, int dy) { //покоординатний рух персонажа(змійки)
 
 		int newx = mainx + dx;
 		int newy = mainy + dy;
@@ -84,7 +84,7 @@ public:
 		system("cls");
 	}
 
-	void generateApple() {
+	void generateApple() { //додавання у гру їжі(яблука) для персонажа(змійки)
 		int x = 0;
 		int y = 0;
 		do {
@@ -95,7 +95,7 @@ public:
 		Field[x + y * width] = -2;
 	}
 
-	void update() {
+	void update() { //оновлення ігрового поля при русі персонажа(змійки)
 		switch (direction) {
 		case 0: move(-1, 0);
 			break;
@@ -112,7 +112,7 @@ public:
 		}
 	}
 
-	void initField()
+	void initField() //ініціалізація ігрового поля
 	{
 		headx = width / 2;
 		heady = height / 2;
@@ -130,7 +130,7 @@ public:
 		generateApple();
 	}
 
-	void printField()
+	void printField() //побудова ігрового поля
 	{
 		for (int x = 0; x < width; ++x) {
 			for (int y = 0; y < height; ++y) {
