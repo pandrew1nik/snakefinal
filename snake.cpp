@@ -8,8 +8,8 @@
 
 using namespace std;
 
-int headx;
-int heady;
+int mainx;
+int mainy;
 
 class Snake() {
 public:
@@ -35,8 +35,8 @@ public:
 	}
 
 	void move(int dx, int dy) {
-		int newx = headx + dx;
-		int newy = heady + dy;
+		int newx = mainx + dx;
+		int newy = mainy + dy;
 		if (Field[newx + newy * width] == -2) {
 			Apple++;
 			generateApple();
@@ -44,9 +44,9 @@ public:
 		else if (Field[newx + newy * width] != 0) {
 			running = false;
 		}
-		headx = newx;
-		heady = newy;
-		Field[headx + heady * width] = Apple + 1;
+		mainx = newx;
+		mainy = newy;
+		Field[mainx + mainy * width] = Apple + 1;
 	}
 
 	void clearScreen() {
