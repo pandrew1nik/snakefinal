@@ -7,7 +7,7 @@ using namespace std;
 char getFieldValue(int value);
 const int width = 20;
 const int height = 40;
-int map[width * height];
+int Field[width * height];
 
 class Field {
 public:
