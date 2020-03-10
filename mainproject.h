@@ -14,8 +14,8 @@ const int width = 20;
 const int height = 40;
 
 int Field[width * height];
-int headx;
-int heady;
+int mainx;
+int mainy;
 int direction;
 int Apple = 3;
 
@@ -56,7 +56,7 @@ public:
 		case 'a':
 			if (direction != 5) direction = 3;
 			break;
-		case 'k':
+		case 'x':
 			running = false;
 			break;
 		}
@@ -64,8 +64,8 @@ public:
 
 	void move(int dx, int dy) {
 
-		int newx = headx + dx;
-		int newy = heady + dy;
+		int newx = mainx + dx;
+		int newy = mainy + dy;
 
 		if (Field[newx + newy * width] == -2) {
 			Apple++;
@@ -75,9 +75,9 @@ public:
 			running = false;
 		}
 
-		headx = newx;
-		heady = newy;
-		Field[headx + heady * width] = Apple + 1;
+		mainx = newx;
+		mainy = newy;
+		Field[mainx + mainy * width] = Apple + 1;
 	}
 
 	void clearScreen() {
@@ -116,7 +116,7 @@ public:
 	{
 		headx = width / 2;
 		heady = height / 2;
-		Field[headx + heady * width] = 1;
+		Field[mainx + mainy * width] = 1;
 
 		for (int x = 0; x < width; ++x) {
 			Field[x] = -1;
