@@ -33,18 +33,18 @@ public:
 	void initField()
 	{
 
-		headx = width / 2;
-		heady = height / 2;
-		map[headx + heady * width] = 1;
+		mainx = width / 2;
+		mainy = height / 2;
+		map[mainx + mainy * width] = 1;
 
 		for (int x = 0; x < width; ++x) {
-			map[x] = -1;
-			map[x + (height - 1) * width] = -1;
+			Field[x] = -1;
+			Field[x + (height - 1) * width] = -1;
 		}
 
 		for (int y = 0; y < height; y++) {
-			map[0 + y * width] = -1;
-			map[(width - 1) + y * width] = -1;
+			Field[0 + y * width] = -1;
+			Field[(width - 1) + y * width] = -1;
 		}
 
 		generateApple();
