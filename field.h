@@ -11,7 +11,7 @@ int Field[width * height];
 
 class Field {
 public:
-	void run()
+	void run() //початок гри
 	{
 		initField();
 		running = true;
@@ -30,12 +30,12 @@ public:
 		cin.ignore();
 	}
 
-	void initField()
+	void initField() //ініціалізація ігрового поля
 	{
 
 		mainx = width / 2;
 		mainy = height / 2;
-		map[mainx + mainy * width] = 1;
+		Field[mainx + mainy * width] = 1;
 
 		for (int x = 0; x < width; ++x) {
 			Field[x] = -1;
@@ -50,12 +50,12 @@ public:
 		generateApple();
 	}
 
-	void printField()
+	void printField() //побудова ігрового поля
 	{
 		for (int x = 0; x < width; ++x) {
 			for (int y = 0; y < height; ++y) {
 
-				cout << getFieldValue(map[x + y * width]);
+				cout << getFieldValue(Field[x + y * width]);
 			}
 
 			cout << endl;
