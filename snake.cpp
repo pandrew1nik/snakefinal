@@ -64,7 +64,7 @@ public:
 			break;
 		}
 		for (int i = 0; i < width * height; i++) {
-			if (map[i] > 0) map[i]--;
+			if (Field[i] > 0) Field[i]--;
 		}
 	}
 };
