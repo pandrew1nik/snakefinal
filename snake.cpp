@@ -13,7 +13,7 @@ int mainy;
 
 class Snake() {
 public:
-	void changeDirection(char key) {
+	void changeDirection(char key) { //зміна напряму при натисканні на певні клавіші клавіатури
 
 		switch (key) {
 		case 'w':
@@ -34,7 +34,7 @@ public:
 		}
 	}
 
-	void move(int dx, int dy) {
+	void move(int dx, int dy) { //пересування персонажа(змійки) по ігровому полю
 		int newx = mainx + dx;
 		int newy = mainy + dy;
 		if (Field[newx + newy * width] == -2) {
@@ -52,7 +52,7 @@ public:
 	void clearScreen() {
 		system("cls");
 	}
-	void update() {
+	void update() { //оновлення координат при пересуванні персонажа(змійки) по ігровому полю
 		switch (direction) {
 		case 0: move(-1, 0);
 			break;
