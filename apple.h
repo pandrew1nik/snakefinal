@@ -8,7 +8,7 @@ int Apple = 3;
 
 class Food {
 public:
-	void generateApple() {
+	void generateApple() { //спавн(поява) корму(яблука) для персонажа(змійки)
 		int x = 0;
 		int y = 0;
 		do {
