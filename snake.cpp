@@ -28,7 +28,7 @@ public:
 		case 'a':
 			if (direction != 5) direction = 3;
 			break;
-		case 'k':
+		case 'x':
 			running = false;
 			break;
 		}
